@@ -1,0 +1,237 @@
+/* KhaldounVisualBuilder — حريتان
+   التصنيف البصري: 1 — ثقيل/أرشيفي
+   اللوحة: خرسانة باردة + تآكل + رماد + لون سوريا للتوقيع
+*/
+
+:root {
+  /* لوحة ثقيلة/أرشيفية */
+  --bg:          #14140f;     /* رماد ليلي */
+  --paper:       #1c1c17;     /* ورق محروق */
+  --ink:         #d9d3c6;     /* عظمي مُترَّب */
+  --ink-dim:     #8a857a;     /* رمادي دافئ */
+  --muted:       #6a655c;
+  --rule:        rgba(217, 211, 198, 0.14);
+
+  /* لمسات سوريا — للتوقيع والأقسام البارزة */
+  --syria-deep:  #114845;
+  --syria-soft:  #A1B8A6;
+  --blood:       #7a1f1f;     /* ختم أرشيفي خافت */
+
+  /* تيبوغرافيا */
+  --serif:    "Amiri", "Times New Roman", serif;          /* للمتن — وقار */
+  --sans:     "Tajawal", "IBM Plex Sans Arabic", system-ui, sans-serif;
+
+  --max-w:    680px;
+  --gutter:   clamp(1rem, 4vw, 2rem);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.18rem);
+  line-height: 2;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse at top, rgba(255,255,255,0.025), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(122, 31, 31, 0.04), transparent 70%);
+  min-height: 100vh;
+}
+
+/* خامة فيلم خفيفة على الخلفية كلها */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.83  0 0 0 0 0.78  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.55;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--gutter);
+}
+
+/* شريط أرشيف علوي */
+.archive-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-dim);
+  text-transform: none;
+}
+.archive-label {
+  color: var(--syria-soft);
+}
+.archive-code {
+  font-feature-settings: "tnum";
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
+/* Hero */
+.hero {
+  margin: 0 0 3.5rem;
+}
+.hero figure {
+  margin: 0 0 1.8rem;
+  position: relative;
+  background: #0a0a08;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.04) saturate(0.85) brightness(0.96);
+}
+.hero .dateline {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin: 0 0 0.4rem;
+}
+.hero h1 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.hero .caption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--syria-soft);
+  margin: 0;
+  padding-inline-start: 1rem;
+  border-inline-start: 2px solid var(--syria-deep);
+}
+
+/* المتن */
+article {
+  margin-top: 1rem;
+}
+article p {
+  margin: 0 0 1.4em;
+  text-align: start;
+}
+article h2 {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.55rem);
+  line-height: 1.4;
+  margin: 3em 0 1em;
+  color: var(--ink);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* الصور الداخلية */
+figure.inline {
+  margin: 2.6em -0.5rem;
+  background: #0a0a08;
+}
+figure.inline img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.03) saturate(0.85) brightness(0.95);
+}
+figure.inline figcaption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-dim);
+  margin: 0.7em 0.5rem 0;
+  text-align: start;
+}
+
+/* صور placeholder قبل التوليد */
+img[src$=".png"]:not([alt=""]) {
+  background:
+    linear-gradient(135deg, #1a1a14 0%, #0d0d09 100%);
+  min-height: 200px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 3em 0 2.5em;
+}
+
+p.closing {
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 1.2em;
+}
+p.closing:last-of-type {
+  color: var(--syria-soft);
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+}
+footer .location {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin: 0 0 1.2rem;
+}
+footer .tags {
+  margin: 0 0 1.5rem;
+}
+footer .tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  color: var(--syria-soft);
+  margin-inline-end: 0.6rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid rgba(161, 184, 166, 0.25);
+  border-radius: 2px;
+}
+footer .signature {
+  font-size: 0.95rem;
+  color: var(--ink-dim);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* موبايل */
+@media (max-width: 540px) {
+  html, body { font-size: 1rem; line-height: 1.95; }
+  main { padding: 1.1rem; }
+  .archive-strip { font-size: 0.72rem; }
+  figure.inline { margin-inline: 0; }
+  .hero .caption { font-size: 1rem; }
+}
+
+/* احترام تفضيل تقليل الحركة (لا توجد حركة الآن، لكن مبدأياً) */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
