@@ -1,7 +1,8 @@
 # 03 — النظام البصري: Cinematic Documentary
 
-> مصادر: `Visual_System/POSTER_CHEATSHEET.md` (Control Gates + Patch v1.3) + `References/visual-anchors.md` + `References/what-works.md` + `anti-ai-engine` للبصري.
-> النسخة الكاملة لـ POSTER_ENGINE.md (43KB) في `07-sources.md`.
+> **نطاق هذا الملف:** القواعد البصرية التي تنطبق على **HTML/CSS** (ألوان، تكوين، إيقاع، انطباع عام). القواعد الخاصة بتوليد الصور (كاميرات، Layer 4، GPT Image 2) غير مطلوبة في KhaldounVisualBuilder الحالي — للرجوع إليها لاحقاً افتح `07-sources.md`.
+>
+> مصادر: `Visual_System/POSTER_CHEATSHEET.md` (Control Gates) + `References/visual-anchors.md` + `References/what-works.md`.
 
 ---
 
@@ -149,10 +150,15 @@
 
 ---
 
-## ما يُولَّد لكل مشروع KhaldounVisualBuilder
+## كيف تنطبق هذه القواعد على الويب
 
-1. **صورة Hero واحدة** — الفكرة المركزية في مشهد واحد (شاهد مادي واحد).
-2. **2–5 صور داخلية** — تخدم فقرات النص (مشهد لكل فكرة كبرى).
-3. **اختياري: بوستر مستقل** بنسبة 2:3 + caption عربي.
+| القاعدة البصرية | ترجمتها في HTML/CSS |
+|------------------|---------------------|
+| **شاهد مادي واحد** | عنصر بصري واحد مهيمن في Hero — لا تُغرق الصفحة بعناصر |
+| **فراغ سلبي 20–40%** | `padding` و `max-width` كافيان، لا تملأ كل البكسلات |
+| **Hope Failure Detector** | إن كانت الصفحة عن "أمل/بناء/عودة"، لا تجعل CSS احتفالياً بالكامل — اترك أثر جرح (لون مكتوم، حد رفيع، خامة) |
+| **Stillness** | لا animations مزعجة، transitions ≤ 200ms، لا parallax |
+| **Anti-AI Lock البصري** | تجنب gradients مُشبَعة، tilt 3D، shadows مبالغ بها، rounded corners مفرطة |
+| **Cultural Lock السوري** | عند الحاجة استخدم `#114845` و `#A1B8A6`، تيبوغرافيا عربية ثقيلة (Tajawal/Amiri/IBM Plex Sans Arabic) |
 
-> الكم ليس قيمة. 3 صور قوية > 10 متوسطة.
+> الكم ليس قيمة. صفحة واحدة محكمة > 10 صفحات متوسطة.

@@ -1,28 +1,41 @@
-/* KhaldounVisualBuilder — حريتان
-   التصنيف البصري: 1 — ثقيل/أرشيفي
-   اللوحة: خرسانة باردة + تآكل + رماد + لون سوريا للتوقيع
+/* KhaldounVisualBuilder — سوريا نفسها
+   التصنيف البصري: 4 — شاعري/تأملي (Hope with Wound)
+   اللوحة: deep Syrian green + soft sage + charcoal + aged ivory + concrete + muted earth
+   متوافق مع: output/index.html + output/poster.html
 */
 
-:root {
-  /* لوحة ثقيلة/أرشيفية */
-  --bg:          #14140f;     /* رماد ليلي */
-  --paper:       #1c1c17;     /* ورق محروق */
-  --ink:         #d9d3c6;     /* عظمي مُترَّب */
-  --ink-dim:     #8a857a;     /* رمادي دافئ */
-  --muted:       #6a655c;
-  --rule:        rgba(217, 211, 198, 0.14);
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Amiri:wght@400;700&display=swap");
 
-  /* لمسات سوريا — للتوقيع والأقسام البارزة */
-  --syria-deep:  #114845;
-  --syria-soft:  #A1B8A6;
-  --blood:       #7a1f1f;     /* ختم أرشيفي خافت */
+:root {
+  /* الخلفية */
+  --bg:           #14140f;
+  --bg-paper:     #1a1a14;
+  --bg-card:      #1c1c17;
+
+  /* النص */
+  --ink:          #e6e0d2;
+  --ink-soft:     #c9c3b5;
+  --ink-dim:      #9c9588;
+  --muted:        #6a655c;
+
+  /* سوريا */
+  --syria-deep:   #114845;
+  --syria-soft:   #A1B8A6;
+  --syria-glow:   rgba(161, 184, 166, 0.12);
+
+  /* أرضي */
+  --earth:        #3a342a;
+  --stone:        #2a2620;
+  --rule:         rgba(230, 224, 210, 0.10);
+  --rule-bold:    rgba(161, 184, 166, 0.22);
 
   /* تيبوغرافيا */
-  --serif:    "Amiri", "Times New Roman", serif;          /* للمتن — وقار */
-  --sans:     "Tajawal", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --serif:        "Amiri", "Times New Roman", serif;
+  --sans:         "Tajawal", "IBM Plex Sans Arabic", system-ui, sans-serif;
 
-  --max-w:    680px;
-  --gutter:   clamp(1rem, 4vw, 2rem);
+  --max-w:        780px;
+  --max-w-wide:   1100px;
+  --gutter:       clamp(1rem, 4vw, 2.2rem);
 }
 
 * { box-sizing: border-box; }
@@ -33,24 +46,27 @@ html, body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.18rem);
-  line-height: 2;
+  font-size: clamp(1.08rem, 1rem + 0.3vw, 1.22rem);
+  line-height: 2.1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(ellipse at top, rgba(255,255,255,0.025), transparent 60%),
-    radial-gradient(ellipse at bottom, rgba(122, 31, 31, 0.04), transparent 70%);
   min-height: 100vh;
 }
 
-/* خامة فيلم خفيفة على الخلفية كلها */
+body {
+  background-image:
+    radial-gradient(ellipse at 30% 0%, rgba(17, 72, 69, 0.10), transparent 60%),
+    radial-gradient(ellipse at 70% 100%, rgba(161, 184, 166, 0.05), transparent 70%);
+}
+
+/* خامة فيلم */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.83  0 0 0 0 0.78  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  opacity: 0.55;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.9  0 0 0 0 0.88  0 0 0 0 0.82  0 0 0 0.045 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.5;
   mix-blend-mode: overlay;
   z-index: 1;
 }
@@ -63,175 +79,330 @@ main {
   padding: var(--gutter);
 }
 
-/* شريط أرشيف علوي */
-.archive-strip {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 0;
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid var(--rule);
+/* =========================================
+   HERO
+   ========================================= */
+.hero {
+  margin: 0 0 4rem;
+  padding-block: 3rem 1rem;
+}
+.hero .kicker {
   font-family: var(--sans);
   font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  color: var(--ink-dim);
-  text-transform: none;
-}
-.archive-label {
+  letter-spacing: 0.22em;
   color: var(--syria-soft);
+  margin: 0 0 2.5rem;
+  font-weight: 500;
 }
-.archive-code {
-  font-feature-settings: "tnum";
-  letter-spacing: 0.15em;
-  color: var(--muted);
+.hero .kicker::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--syria-soft);
+  vertical-align: middle;
+  margin-inline-end: 0.7em;
+  opacity: 0.7;
 }
 
-/* Hero */
-.hero {
-  margin: 0 0 3.5rem;
-}
-.hero figure {
-  margin: 0 0 1.8rem;
-  position: relative;
+.hero-media {
+  margin: 0 calc(-1 * var(--gutter)) 2.6rem;
   background: #0a0a08;
   overflow: hidden;
 }
-.hero img {
+.hero-media img {
   width: 100%;
   height: auto;
   display: block;
-  filter: contrast(1.04) saturate(0.85) brightness(0.96);
+  filter: contrast(1.04) saturate(0.9) brightness(0.96);
 }
-.hero .dateline {
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.hero-copy .overline {
   font-family: var(--sans);
-  font-size: 0.85rem;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-  margin: 0 0 0.4rem;
-}
-.hero h1 {
-  font-family: var(--sans);
-  font-weight: 800;
-  font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem);
-  line-height: 1.2;
-  margin: 0 0 1rem;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
-.hero .caption {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.1rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
   color: var(--syria-soft);
   margin: 0;
+  font-weight: 500;
+}
+.hero-copy h1 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 1.6rem + 4vw, 4.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+.hero-copy h1::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  background: var(--syria-deep);
+  margin-bottom: 1.6rem;
+}
+.hero-copy .lead {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  color: var(--ink-soft);
+  margin: 0.4rem 0 0;
+  max-width: 36em;
+  line-height: 1.85;
   padding-inline-start: 1rem;
   border-inline-start: 2px solid var(--syria-deep);
 }
 
-/* المتن */
-article {
-  margin-top: 1rem;
-}
-article p {
-  margin: 0 0 1.4em;
-  text-align: start;
-}
-article h2 {
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.55rem);
-  line-height: 1.4;
-  margin: 3em 0 1em;
-  color: var(--ink);
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--rule);
+/* =========================================
+   ARTICLE / ESSAY
+   ========================================= */
+.essay {
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--rule);
 }
 
-/* الصور الداخلية */
-figure.inline {
-  margin: 2.6em -0.5rem;
+.essay-section {
+  margin: 0 0 3.5rem;
+}
+.essay-section h2 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2rem);
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0 0 1.4rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule-bold);
+  display: flex;
+  align-items: baseline;
+  gap: 0.7em;
+}
+.essay-section h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--syria-deep);
+  flex-shrink: 0;
+  transform: translateY(-0.15em);
+}
+.essay-section p {
+  margin: 0 0 1.4em;
+  max-width: 38em;
+  text-align: start;
+}
+.essay-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* قسم السؤال — تأكيد بصري */
+.question-section {
+  background: linear-gradient(180deg, rgba(17, 72, 69, 0.05), transparent 80%);
+  padding: 2rem 1.6rem;
+  border-inline-start: 3px solid var(--syria-deep);
+  margin-inline: calc(-1 * var(--gutter) * 0.4);
+}
+.question-section h2 {
+  color: var(--syria-soft);
+}
+.question-section h2::before {
+  background: var(--syria-soft);
+}
+
+/* قسم النهاية — وزن إضافي */
+.ending-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--rule-bold);
+}
+.ending-section h2 {
+  font-size: clamp(1.8rem, 1.2rem + 1.8vw, 2.6rem);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 1.8rem;
+}
+.ending-section h2::before {
+  background: var(--syria-soft);
+  width: 12px;
+  height: 12px;
+}
+.ending-section p {
+  font-size: 1.1em;
+  color: var(--ink);
+  line-height: 2.05;
+}
+.ending-section p:last-child {
+  color: var(--syria-soft);
+  font-style: italic;
+  font-size: 1.15em;
+  margin-top: 1.8em;
+  padding-inline-start: 1rem;
+  border-inline-start: 2px solid var(--syria-soft);
+}
+
+/* =========================================
+   FIGURES
+   ========================================= */
+figure { margin: 0; }
+
+/* صورة عريضة — تخرج عن العمود */
+.wide-figure {
+  margin: 3rem calc(-1 * var(--gutter)) 3rem;
   background: #0a0a08;
 }
-figure.inline img {
+.wide-figure img {
   width: 100%;
   height: auto;
   display: block;
-  filter: contrast(1.03) saturate(0.85) brightness(0.95);
+  filter: contrast(1.03) saturate(0.88) brightness(0.95);
 }
-figure.inline figcaption {
+.wide-figure figcaption {
   font-family: var(--serif);
   font-style: italic;
   font-size: 0.95rem;
   color: var(--ink-dim);
-  margin: 0.7em 0.5rem 0;
+  margin: 0.8rem var(--gutter) 0;
   text-align: start;
 }
 
-/* صور placeholder قبل التوليد */
-img[src$=".png"]:not([alt=""]) {
-  background:
-    linear-gradient(135deg, #1a1a14 0%, #0d0d09 100%);
-  min-height: 200px;
+/* صورة داخل العمود */
+.inset-figure {
+  margin: 2.5rem 0;
+  background: #0a0a08;
 }
-
-hr {
-  border: 0;
-  border-top: 1px solid var(--rule);
-  margin: 3em 0 2.5em;
+.inset-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.03) saturate(0.88) brightness(0.95);
 }
-
-p.closing {
-  font-size: 1.15rem;
-  color: var(--ink);
-  margin-bottom: 1.2em;
-}
-p.closing:last-of-type {
-  color: var(--syria-soft);
+.inset-figure figcaption {
+  font-family: var(--serif);
   font-style: italic;
+  font-size: 0.92rem;
+  color: var(--ink-dim);
+  margin: 0.7rem 0 0;
+  text-align: start;
 }
 
-/* Footer */
+.final-figure {
+  margin: 3.5rem 0 1rem;
+  position: relative;
+}
+.final-figure::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--syria-soft);
+  margin: 1.2rem 0 0;
+  opacity: 0.6;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
 footer {
   margin-top: 5rem;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
   border-top: 1px solid var(--rule);
   font-family: var(--sans);
+  text-align: start;
 }
-footer .location {
-  font-size: 0.8rem;
-  color: var(--muted);
-  letter-spacing: 0.05em;
-  margin: 0 0 1.2rem;
-}
-footer .tags {
-  margin: 0 0 1.5rem;
-}
-footer .tag {
-  display: inline-block;
-  font-size: 0.82rem;
-  color: var(--syria-soft);
-  margin-inline-end: 0.6rem;
-  padding: 0.15rem 0.55rem;
-  border: 1px solid rgba(161, 184, 166, 0.25);
-  border-radius: 2px;
-}
-footer .signature {
+footer p {
   font-size: 0.95rem;
   color: var(--ink-dim);
   margin: 0;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
-/* موبايل */
+/* =========================================
+   POSTER PAGE
+   ========================================= */
+body.poster-page {
+  background: #0a0a08;
+}
+.poster-shell {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: var(--gutter);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.poster-frame {
+  position: relative;
+  background: #0a0a08;
+  margin: 0;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+.poster-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.05) saturate(0.9) brightness(0.96);
+}
+.poster-frame figcaption {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  padding: 2.5rem 2rem 1.8rem;
+  background: linear-gradient(0deg, rgba(10, 10, 8, 0.92) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--ink);
+}
+.poster-frame figcaption span {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(2rem, 1.4rem + 2.5vw, 3.4rem);
+  line-height: 1.1;
+  color: var(--ink);
+}
+.poster-frame figcaption small {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--syria-soft);
+  letter-spacing: 0.08em;
+}
+.poster-page footer {
+  margin-top: 2rem;
+  border-top: none;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+/* =========================================
+   موبايل
+   ========================================= */
 @media (max-width: 540px) {
-  html, body { font-size: 1rem; line-height: 1.95; }
+  html, body { font-size: 1.02rem; line-height: 2; }
   main { padding: 1.1rem; }
-  .archive-strip { font-size: 0.72rem; }
-  figure.inline { margin-inline: 0; }
-  .hero .caption { font-size: 1rem; }
+  .hero { padding-block: 1.5rem 0.5rem; margin-bottom: 2.5rem; }
+  .hero-media { margin-inline: -1.1rem; margin-bottom: 1.6rem; }
+  .hero-copy h1::before { width: 44px; height: 3px; margin-bottom: 1rem; }
+  .essay { padding-top: 1.5rem; }
+  .essay-section { margin-bottom: 2.6rem; }
+  .question-section { padding: 1.6rem 1rem; margin-inline: -0.4rem; }
+  .ending-section { margin-top: 2.8rem; padding-top: 2.2rem; }
+  .wide-figure { margin-inline: -1.1rem; margin-block: 2rem; }
+  .wide-figure figcaption { margin-inline: 1.1rem; }
+  footer { margin-top: 3.5rem; padding-top: 1.8rem; }
+
+  .poster-frame figcaption { padding: 1.6rem 1.2rem 1.2rem; }
 }
 
-/* احترام تفضيل تقليل الحركة (لا توجد حركة الآن، لكن مبدأياً) */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }

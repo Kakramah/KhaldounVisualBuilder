@@ -37,7 +37,7 @@
 | `anti-ai-engine.md` | `02-language-and-tone.md` (9 rules + 5 tones) | [فتح](https://drive.google.com/file/d/1AO0QA44cWj6Cg575CduekMJZ95NbCyOV/view) |
 | `anti-ai-writing-style.md` | `02-language-and-tone.md` (banned vocab + negative parallelism) | [فتح](https://drive.google.com/file/d/1IQGbNa56ur57LOsVDlyhVNwIZ3trQ16r/view) |
 | `POSTER_CHEATSHEET.md` | `03-visual-system.md` (Control Gates + Patch v1.3) | [فتح](https://drive.google.com/file/d/1cZ3VmnML6lBaEUpGz6wRzn7gcfu_Z_63/view) |
-| `prompt-library.md` | `04-image-prompts.md` (DNA system) | [فتح](https://drive.google.com/file/d/1HrsrGKdGEKO8-hanTfY5xIr1FHUfT9zg/view) |
+| `prompt-library.md` | (لم يعد مُكثَّفاً في skills/ — KhaldounVisualBuilder الحالي HTML فقط) | [فتح](https://drive.google.com/file/d/1HrsrGKdGEKO8-hanTfY5xIr1FHUfT9zg/view) |
 
 ### ⚠️ مراجع ضخمة — لا تُحمَّل كاملة (استخدم grep)
 
