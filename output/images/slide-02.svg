@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">خريطة رمزية للحولة</title>
+  <desc id="desc">خريطة أرشيفية رمزية داكنة مع نقطة حمراء.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1d19"/>
+      <stop offset="1" stop-color="#0a0b0a"/>
+    </linearGradient>
+    <filter id="grain"><feTurbulence baseFrequency="0.7" numOctaves="4" seed="32"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.13"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#060706"/>
+  <path d="M170 130h1260v650H170z" fill="url(#paper)" stroke="#d8d0bd" stroke-opacity="0.18"/>
+  <path d="M292 276c176-82 346-105 515-48 83 28 150 3 234-22 92-28 174 3 275 70" fill="none" stroke="#a9a08e" stroke-opacity="0.25" stroke-width="18"/>
+  <path d="M244 587c232-84 430-84 592 0 129 67 265 60 409-26" fill="none" stroke="#114845" stroke-opacity="0.38" stroke-width="14"/>
+  <path d="M430 208l100 472M655 160l-45 580M880 174l35 558M1125 210l-78 480" stroke="#d8d0bd" stroke-opacity="0.1" stroke-width="2"/>
+  <path d="M230 390h1040M235 510h1000M310 650h950" stroke="#d8d0bd" stroke-opacity="0.09" stroke-width="2"/>
+  <circle cx="815" cy="468" r="21" fill="#8a2420"/>
+  <circle cx="815" cy="468" r="70" fill="none" stroke="#8a2420" stroke-opacity="0.45" stroke-width="3"/>
+  <circle cx="815" cy="468" r="128" fill="none" stroke="#8a2420" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M980 470h255" stroke="#a58f57" stroke-opacity="0.55" stroke-width="3"/>
+  <path d="M170 780l1260-650" stroke="#000" stroke-opacity="0.22" stroke-width="90"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.5"/>
+</svg>

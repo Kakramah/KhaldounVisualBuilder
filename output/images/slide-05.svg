@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">بيت فارغ</title>
+  <desc id="desc">غرفة بيت خالية مع نافذة مكسورة وضوء بارد.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20231f"/><stop offset="1" stop-color="#080908"/></linearGradient>
+    <filter id="grain"><feTurbulence baseFrequency="0.68" numOctaves="4" seed="65"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.14"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#060706"/>
+  <path d="M180 105h1240v650H180z" fill="url(#wall)"/>
+  <path d="M1020 170h260v320h-260z" fill="#080908" stroke="#d8d0bd" stroke-opacity="0.14" stroke-width="8"/>
+  <path d="M1020 330h260M1150 170v320" stroke="#d8d0bd" stroke-opacity="0.12" stroke-width="7"/>
+  <path d="M1035 475l-260 160 520 8z" fill="#d8d0bd" opacity="0.08"/>
+  <path d="M340 238c135-18 248 2 338 58M375 548c170-26 332-8 489 54" stroke="#d8d0bd" stroke-opacity="0.08" stroke-width="12"/>
+  <path d="M485 310h155v372H485z" fill="#0e100e"/>
+  <path d="M180 755h1240v145H180z" fill="#0a0b0a"/>
+  <path d="M610 690c18-25 63-28 83 0l20 65H585z" fill="#191b18"/>
+  <path d="M1182 177l-105 152M1114 335l158 110M1278 245l-118 72" stroke="#d8d0bd" stroke-opacity="0.18" stroke-width="4"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.55"/>
+</svg>

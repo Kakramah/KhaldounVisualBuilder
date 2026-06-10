@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">رد فعل دبلوماسي</title>
+  <desc id="desc">مبنى رسمي رمزي وأعلام مطموسة في ضوء بارد.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111817"/><stop offset="1" stop-color="#050605"/></linearGradient>
+    <filter id="grain"><feTurbulence baseFrequency="0.86" numOctaves="4" seed="98"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.12"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <path d="M340 338h920v330H340z" fill="#161916" stroke="#d8d0bd" stroke-opacity="0.12" stroke-width="8"/>
+  <path d="M450 298h700l105 40H345z" fill="#232720"/>
+  <path d="M432 406h74v262h-74zm155 0h74v262h-74zm155 0h74v262h-74zm155 0h74v262h-74zm155 0h74v262h-74z" fill="#0c0d0c"/>
+  <path d="M312 668h980v64H312z" fill="#22251f"/>
+  <path d="M380 235v170M520 220v170M660 245v160" stroke="#6d6658" stroke-width="5"/>
+  <path d="M385 237c60 10 78 42 0 60z" fill="#114845" opacity="0.72"/>
+  <path d="M525 222c58 14 80 48 0 64z" fill="#d8d0bd" opacity="0.55"/>
+  <path d="M665 247c58 12 82 44 0 62z" fill="#8a2420" opacity="0.6"/>
+  <path d="M190 760h1220" stroke="#000" stroke-opacity="0.34" stroke-width="68"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.5"/>
+</svg>

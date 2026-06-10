@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">دفتر ضحايا مفتوح</title>
+  <desc id="desc">دفتر مفتوح وأثر حبر أحمر محدود.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111310"/><stop offset="1" stop-color="#050605"/></linearGradient>
+    <filter id="grain"><feTurbulence baseFrequency="0.9" numOctaves="4" seed="54"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.12"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M270 168h500c55 0 84 22 103 54 19-32 48-54 103-54h354v560H953c-44 0-64 12-80 36-16-24-36-36-80-36H270z" fill="#cfc5ae" opacity="0.83"/>
+  <path d="M872 225v538" stroke="#5e5546" stroke-opacity="0.35" stroke-width="5"/>
+  <path d="M345 278h390M345 345h430M345 412h382M345 479h414M345 546h350M980 285h250M980 352h235M980 419h258M980 486h220" stroke="#211f1a" stroke-opacity="0.22" stroke-width="9"/>
+  <circle cx="1028" cy="590" r="30" fill="#8a2420" opacity="0.88"/>
+  <circle cx="1120" cy="590" r="30" fill="#8a2420" opacity="0.58"/>
+  <circle cx="1212" cy="590" r="30" fill="#8a2420" opacity="0.34"/>
+  <path d="M1010 666h230" stroke="#114845" stroke-opacity="0.5" stroke-width="7"/>
+  <path d="M250 730h1110" stroke="#000" stroke-opacity="0.25" stroke-width="42"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.48"/>
+</svg>

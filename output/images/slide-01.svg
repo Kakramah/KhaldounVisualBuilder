@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">باب بيت قديم نصف مفتوح</title>
+  <desc id="desc">مشهد رمزي داكن لباب قديم في بيت مهجور.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050605"/>
+      <stop offset="0.48" stop-color="#151714"/>
+      <stop offset="1" stop-color="#070807"/>
+    </linearGradient>
+    <radialGradient id="light" cx="38%" cy="42%" r="42%">
+      <stop offset="0" stop-color="#d8d0bd" stop-opacity="0.22"/>
+      <stop offset="0.55" stop-color="#a58f57" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="4" seed="21"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.16"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#light)"/>
+  <rect x="190" y="100" width="1220" height="710" fill="#111310"/>
+  <rect x="240" y="150" width="470" height="645" fill="#251f18"/>
+  <path d="M710 150h130v645H710z" fill="#070807"/>
+  <path d="M350 185h260v575H350z" fill="#37291e"/>
+  <path d="M378 222h205v490H378z" fill="#201812"/>
+  <circle cx="655" cy="465" r="12" fill="#a58f57" opacity="0.6"/>
+  <path d="M835 150h525v645H835z" fill="#0b0c0b"/>
+  <path d="M885 205h405v75H885zm0 130h405v75H885zm0 130h405v75H885zm0 130h405v75H885z" fill="#171a17"/>
+  <path d="M0 775h1600v125H0z" fill="#060706"/>
+  <path d="M250 780c190-34 411-34 685-3 181 21 318 8 465-23v146H250z" fill="#0b0c0b"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.48"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ساعة وملف أرشيفي</title>
+  <desc id="desc">ساعة متوقفة بجانب ملف ورقي قديم.</desc>
+  <defs>
+    <radialGradient id="lamp" cx="38%" cy="35%" r="38%">
+      <stop offset="0" stop-color="#d8d0bd" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#050605" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence baseFrequency="0.75" numOctaves="4" seed="43"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.14"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#070807"/>
+  <rect width="1600" height="900" fill="url(#lamp)"/>
+  <path d="M295 255h710l155 120v340H295z" fill="#c7bea9" opacity="0.78"/>
+  <path d="M1005 255v120h155" fill="#8f856e" opacity="0.55"/>
+  <path d="M390 410h625M390 480h540M390 550h600" stroke="#27231d" stroke-opacity="0.25" stroke-width="8"/>
+  <circle cx="1045" cy="538" r="185" fill="#111310" stroke="#d8d0bd" stroke-opacity="0.35" stroke-width="10"/>
+  <circle cx="1045" cy="538" r="132" fill="#171a17" stroke="#a58f57" stroke-opacity="0.28" stroke-width="3"/>
+  <path d="M1045 538V426M1045 538l82 48" stroke="#d8d0bd" stroke-opacity="0.75" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="1045" cy="538" r="10" fill="#8a2420"/>
+  <path d="M0 735h1600v165H0z" fill="#050605"/>
+  <ellipse cx="820" cy="746" rx="560" ry="55" fill="#000" opacity="0.4"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.52"/>
+</svg>

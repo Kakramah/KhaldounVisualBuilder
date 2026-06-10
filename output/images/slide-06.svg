@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ملف تحقيق</title>
+  <desc id="desc">ملف أدلة وأوراق مختومة بضوء جانبي.</desc>
+  <defs>
+    <radialGradient id="light" cx="72%" cy="32%" r="44%"><stop offset="0" stop-color="#d8d0bd" stop-opacity="0.22"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="grain"><feTurbulence baseFrequency="0.78" numOctaves="4" seed="76"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.13"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#070807"/>
+  <rect width="1600" height="900" fill="url(#light)"/>
+  <path d="M330 210h360l55 72h515v408H330z" fill="#b8ad95" opacity="0.76"/>
+  <path d="M380 310h720v60H380zm0 105h630v46H380zm0 86h690v46H380zm0 86h520v46H380z" fill="#252119" opacity="0.25"/>
+  <circle cx="1092" cy="544" r="104" fill="none" stroke="#8a2420" stroke-opacity="0.65" stroke-width="12"/>
+  <circle cx="1092" cy="544" r="72" fill="#8a2420" opacity="0.16"/>
+  <path d="M1015 544h154M1092 467v154" stroke="#8a2420" stroke-opacity="0.62" stroke-width="8"/>
+  <path d="M250 690h1120" stroke="#000" stroke-opacity="0.32" stroke-width="56"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.5"/>
+</svg>

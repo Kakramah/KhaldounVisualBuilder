@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">صندوق وثائق</title>
+  <desc id="desc">صندوق أرشيف ووثائق تحت ضوء ضيق.</desc>
+  <defs>
+    <radialGradient id="beam" cx="50%" cy="20%" r="55%"><stop offset="0" stop-color="#d8d0bd" stop-opacity="0.24"/><stop offset="0.45" stop-color="#a58f57" stop-opacity="0.08"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="grain"><feTurbulence baseFrequency="0.8" numOctaves="4" seed="109"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.13"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#060706"/>
+  <rect width="1600" height="900" fill="url(#beam)"/>
+  <path d="M400 450h800l-70 255H470z" fill="#29231a"/>
+  <path d="M455 375h690l55 75H400z" fill="#3a3022"/>
+  <path d="M530 310h465l65 65H505z" fill="#c7bea9" opacity="0.68"/>
+  <path d="M570 356h360M548 410h480M510 500h555" stroke="#0b0c0b" stroke-opacity="0.28" stroke-width="8"/>
+  <path d="M735 452h130v65H735z" fill="#a58f57" opacity="0.48"/>
+  <path d="M660 705h280" stroke="#8a2420" stroke-opacity="0.55" stroke-width="7"/>
+  <path d="M300 730h1000" stroke="#000" stroke-opacity="0.34" stroke-width="70"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.52"/>
+</svg>
